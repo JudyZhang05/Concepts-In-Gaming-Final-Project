@@ -1,3 +1,11 @@
+/* Styles for smaller screens *
+@media screen and (max-width: 960px) {
+}  /* CSS rules for small screens*
+
+/* Styles for Larger screens *
+@media screen and (min-width: 768px) {
+}  /* CSS rules for large screens*
+
 
 body {
   margin: 0;
@@ -50,6 +58,7 @@ button:hover {
   color: #666;
   cursor: pointer;
 }
+
 
 
 
