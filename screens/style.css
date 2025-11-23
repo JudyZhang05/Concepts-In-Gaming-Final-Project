@@ -61,5 +61,41 @@ button:hover {
 
 
 
+.result-container {
+  text-align: center;
+  padding: 40px;
+  font-family: Arial, sans-serif;
+}
+
+.score-box {
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #eee;
+  border-radius: 10px;
+  width: 200px;
+}
+
+#score-value {
+  font-size: 48px;
+  font-weight: bold;
+  color: maroon;
+}
+
+button {
+  padding: 15px 30px;
+  font-size: 18px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #555;
+}
+
+
+
 
 
