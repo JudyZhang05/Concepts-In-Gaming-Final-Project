@@ -1,1 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The Cleaner – Results</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="result-container">
+    <h1 id="result-message">Loading result...</h1>
+
+    <div class="score-box">
+      <h2>SCORE</h2>
+      <div id="score-value">0</div>
+    </div>
+
+    <button onclick="runAgain()">RUN IT AGAIN!</button>
+  </div>
+
+  <script>
+    // Simulated score (replace with actual game logic)
+    const playerScore = Math.floor(Math.random() * 101); // 0–100
+
+    document.getElementById("score-value").textContent = playerScore;
+
+    const message = document.getElementById("result-message");
+    if (playerScore >= 80) {
+      message.textContent = "PRESTIGE UNLOCKED: You are... The Cleaner!";
+    } else if (playerScore >= 50) {
+      message.textContent = "Not bad... but there's still grime.";
+    } else {
+      message.textContent = "WOW! Did you even try?";
+    }
+
+    function runAgain() {
+      window.location.href = "index.html"; // or restart game logic
+    }
+  </script>
+
+</body>
+</html>
 
