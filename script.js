@@ -5,9 +5,14 @@ const playTimer = document.querySelector('#playTimer')
 const gameOver = document.querySelector('.gameOver')
 const organizeList = document.querySelector('#organizeList')
 const readyButton = document.querySelector('.readyButton')
+let newList = {}
+let placeKeys
+let correctChoice
+const gameObject = document.querySelector('.gameObject')
+const gameOption = document.querySelector('.gameOption')
 let totalPlayTime = 0
 let remSec = 30
-let playMin = 2
+let playMin = 1
 let playSec = 0
 // difficulty level: easy = 2 items , intermediate = 4 items, hard = 6 items
 let difficulty = 2
@@ -16,23 +21,31 @@ let difficulty = 2
 const startScreen = document.querySelector('.startScreen')
 
 // declaring dictionary objects
-const allMessyObjects = {'pen':'test','brush':'test','trash':'test','stickers':'test','photo':'test', 'clip':''}
+const allMessyObjects = {'pen':'test','brush':'test','trash':'test','stickers':'test','photo':'test', 'clip':'test'}
 const allMessyKeys = Object.keys(allMessyObjects)
-const allPlaces = {'drawer':'test','trash can':'test','bag':'test','book':'test','binder':'test', 'cup':''}
+const allPlaces = {'drawer':'test','trash-can':'test','bag':'test','book':'test','binder':'test', 'cup':'test'}
 const allPlacesKeys = Object.keys(allPlaces)
-// console.log(allMessyKeys[Math.floor(Math.random() * 6)])
 
 // generate new list
 let newGame = () => {
+    newList = {}
     playTimer.style.display = 'block'
     organizeList.textContent = ''
-    let newList = {}
     for (let match = 0; match < difficulty; match++){
         let thisPlace = allPlacesKeys[Math.floor(Math.random() * 6)]
         let thisObject = allMessyKeys[Math.floor(Math.random() * 6)]
-        newList[`${thisPlace}`] = thisObject
-        organizeList.innerHTML += `${thisObject} in ${thisPlace}<br>`
+        // ensure that there is no duplicated objects and places
+        if(`${thisPlace}` in newList || Object.values(newList).includes(thisObject)){
+            difficulty++
+        }else{
+            newList[`${thisPlace}`] = thisObject
+            organizeList.innerHTML += `${thisObject} in ${thisPlace}<br>`
+        }
     }
+    if(totalPlayTime <= 120){
+        difficulty = 2
+    }
+    placeKeys = Object.keys(newList)
 }
 
 // skip 30sec memorization
@@ -41,7 +54,7 @@ readyButton.addEventListener('click', () => {
 })
 
 // play time responds to user's actions accordingly
-let changePlayTime = (gameResponse) => {
+const changePlayTime = (gameResponse) => {
     let currentSec = playSec
     if (gameResponse == 0){
         if(playSec + 5 >= 60){
@@ -64,24 +77,66 @@ let changePlayTime = (gameResponse) => {
 }
 
 
-// const add = document.querySelector('.add')
-// const remove = document.querySelector('.remove')
-// add.addEventListener('click', () => {
-//     changePlayTime(0)
-// })
-// remove.addEventListener('click', () => {
-//     changePlayTime(1)
-// })
+const getItems = () => {
+    gameObject.innerHTML = ''
+    let rando = Math.floor(Math.random() * difficulty)
+    correctChoice = newList[`${placeKeys[rando]}`]
+    // console.log(newList[`${placeKeys[rando]}`])
+    // console.log(placeKeys[rando])
 
+    // objects images    
+    let placeDiv2 = document.createElement('div')
+    let imgEl2 = document.createElement('img')
+    let imgP2 = document.createElement('p')
+    imgEl2.src = `./assets/${allPlaces[`${placeKeys[rando]}`]}.svg`
+    imgEl2.style.width = '100px'
+    imgP2.textContent = newList[`${placeKeys[rando]}`]
+    // console.log(newList[`${placeKeys[rando]}`])
+
+
+    placeDiv2.appendChild(imgEl2)
+    placeDiv2.appendChild(imgP2)
+    gameObject.appendChild(placeDiv2)
+}
+
+
+const getGameChoices = () => {
+    gameOption.innerHTML = ''
+    for(let item of placeKeys){
+        let placeDiv = document.createElement('div')
+        let imgEl = document.createElement('img')
+        let imgP = document.createElement('p')
+
+        // places images
+        imgEl.src = `./assets/${allPlaces[`${item}`]}.svg`
+        imgEl.style.width = '100px'
+        imgEl.classList.add(item)
+        imgP.textContent = item
+
+        placeDiv.appendChild(imgEl)
+        placeDiv.appendChild(imgP)
+        gameOption.appendChild(placeDiv)
+    }
+}
 
 // start game timer(s) when user press play
 if(startScreen.style.display = 'none'){
     newGame()
+    getItems()
+    getGameChoices()
     setInterval(() => {
         if(memorize.style.display == 'none'){
             totalPlayTime++
-            if(totalPlayTime%160 == 0){
+            console.log(totalPlayTime)
+            if(totalPlayTime%120 == 0){
+                if(totalPlayTime >= 180){
+                    difficulty = 6
+                }else if(totalPlayTime == 120){
+                    difficulty = 4
+                }
                 newGame()
+                getItems()
+                getGameChoices()
                 remSec = 30
                 memorize.style.display = 'block'
             }
@@ -109,4 +164,19 @@ if(startScreen.style.display = 'none'){
 
 
 
+gameOption.addEventListener('click', (e) => {
+    if(e.target.src != undefined){
+        // console.log(newList)
+        // console.log(`HERE ${e.target.classList[0]}`)
+        // console.log(newList[`${e.target.classList[0]}`])
+        // if choice is correct
+        if(newList[`${e.target.classList[0]}`] == correctChoice){
+            changePlayTime(0)
+        }else{ // if choice is wrong
+            changePlayTime(1)
+        }
+        getItems()
+        getGameChoices()
+    }
 
+})
