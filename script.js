@@ -24,6 +24,7 @@ const allPlacesKeys = Object.keys(allPlaces)
 
 // generate new list
 let newGame = () => {
+    playTimer.style.display = 'block'
     organizeList.textContent = ''
     let newList = {}
     for (let match = 0; match < difficulty; match++){
@@ -44,9 +45,10 @@ let changePlayTime = (gameResponse) => {
     let currentSec = playSec
     if (gameResponse == 0){
         if(playSec + 5 >= 60){
-            console.log('test1')
             playMin++
             playSec = 60 - currentSec
+        }else{
+            playSec+=5
         }
     }else{
         if(playMin - 1 >= 0 && playSec - 5 <= 0){
@@ -54,20 +56,22 @@ let changePlayTime = (gameResponse) => {
             playSec = 60 - (5 - currentSec)
         }else if(playMin - 1 == 0 && playSec - 5 <= 0){
             playSec = 0
+        }else{
+            playSec-=5
         }
     }
-    console.log('here')
     playTimer.textContent = `${playMin}:${String(playSec).padStart(2, '0')}`
 }
 
-const add = document.querySelector('.add')
-const remove = document.querySelector('.remove')
-add.addEventListener('click', () => {
-    changePlayTime(0)
-})
-remove.addEventListener('click', () => {
-    changePlayTime(1)
-})
+
+// const add = document.querySelector('.add')
+// const remove = document.querySelector('.remove')
+// add.addEventListener('click', () => {
+//     changePlayTime(0)
+// })
+// remove.addEventListener('click', () => {
+//     changePlayTime(1)
+// })
 
 
 // start game timer(s) when user press play
@@ -82,11 +86,12 @@ if(startScreen.style.display = 'none'){
                 memorize.style.display = 'block'
             }
             playTimer.textContent = `${playMin}:${String(playSec).padStart(2, '0')}`
-            if(playSec == '00'){
+            if(playSec <= 0){
                 if(playMin > 0){
                     playSec = 59
                     playMin--
                 }else{
+                    playTimer.style.display = 'none'
                     gameOver.style.display = 'block'
                 }
             }else{
