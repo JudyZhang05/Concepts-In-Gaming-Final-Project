@@ -81,8 +81,6 @@ const getItems = () => {
     gameObject.innerHTML = ''
     let rando = Math.floor(Math.random() * difficulty)
     correctChoice = newList[`${placeKeys[rando]}`]
-    // console.log(newList[`${placeKeys[rando]}`])
-    // console.log(placeKeys[rando])
 
     // objects images    
     let placeDiv2 = document.createElement('div')
@@ -91,8 +89,6 @@ const getItems = () => {
     imgEl2.src = `./assets/${allPlaces[`${placeKeys[rando]}`]}.svg`
     imgEl2.style.width = '100px'
     imgP2.textContent = newList[`${placeKeys[rando]}`]
-    // console.log(newList[`${placeKeys[rando]}`])
-
 
     placeDiv2.appendChild(imgEl2)
     placeDiv2.appendChild(imgP2)
@@ -103,11 +99,11 @@ const getItems = () => {
 const getGameChoices = () => {
     gameOption.innerHTML = ''
     for(let item of placeKeys){
+        // places images
+
         let placeDiv = document.createElement('div')
         let imgEl = document.createElement('img')
         let imgP = document.createElement('p')
-
-        // places images
         imgEl.src = `./assets/${allPlaces[`${item}`]}.svg`
         imgEl.style.width = '100px'
         imgEl.classList.add(item)
@@ -166,9 +162,6 @@ if(startScreen.style.display = 'none'){
 
 gameOption.addEventListener('click', (e) => {
     if(e.target.src != undefined){
-        // console.log(newList)
-        // console.log(`HERE ${e.target.classList[0]}`)
-        // console.log(newList[`${e.target.classList[0]}`])
         // if choice is correct
         if(newList[`${e.target.classList[0]}`] == correctChoice){
             changePlayTime(0)
