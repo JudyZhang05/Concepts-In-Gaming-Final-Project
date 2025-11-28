@@ -42,8 +42,12 @@ let newGame = () => {
             organizeList.innerHTML += `${thisObject} in ${thisPlace}<br>`
         }
     }
-    if(totalPlayTime <= 120){
+    if(totalPlayTime < 120){
         difficulty = 2
+    }else if(totalPlayTime >= 120){
+        difficulty = 4
+    }else if(totalPlayTime >= 180){
+        difficulty = 6
     }
     placeKeys = Object.keys(newList)
 }
@@ -79,6 +83,7 @@ const changePlayTime = (gameResponse) => {
 
 const getItems = () => {
     gameObject.innerHTML = ''
+    console.log(difficulty)
     let rando = Math.floor(Math.random() * difficulty)
     correctChoice = newList[`${placeKeys[rando]}`]
 
@@ -99,8 +104,8 @@ const getItems = () => {
 const getGameChoices = () => {
     gameOption.innerHTML = ''
     for(let item of placeKeys){
-        // places images
 
+        // places images
         let placeDiv = document.createElement('div')
         let imgEl = document.createElement('img')
         let imgP = document.createElement('p')
@@ -158,8 +163,7 @@ if(startScreen.style.display = 'none'){
     }, 1000)
 }
 
-
-
+// game responds after user action
 gameOption.addEventListener('click', (e) => {
     if(e.target.src != undefined){
         // if choice is correct
