@@ -1,107 +1,203 @@
 
 /* Sam's code*/
-.startScreen{
-    display: block;
-}
-
 body {
-  margin: 0;
-  padding: 0;
-  background-color: #8796c7;
-  font-family: Arial, sans-serif;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: #8796c7;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 .main-box {
-  background-color: #ccc;
-  padding: 40px;
-  border-radius: 10px;
-  text-align: center;
-  font-size: 24px;
-  font-weight: bold;
-  line-height: 1.5;
+    font-family: 'DynaPuff';
+
+    background-color: #ccc;
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    line-height: 1.5;
 }
 
 .button-group {
-  margin-top: 30px;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  width: 80%;
-  max-width: 300px;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 80%;
+    max-width: 300px;
 }
 
 button {
-  padding: 15px;
-  font-size: 18px;
-  border: none;
-  border-radius: 8px;
-  background-color: #333;
-  color: white;
-  cursor: pointer;
+    font-family: 'Slackey';
+    padding: 15px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    background-color: #333;
+    color: white;
+    cursor: pointer;
 }
 
 button:hover {
-  background-color: #555;
+    background-color: #555;
 }
 
 .footer-arrow {
-  margin-top: 40px;
-  font-size: 16px;
-  color: #666;
-  cursor: pointer;
+    margin-top: 40px;
+    font-size: 16px;
+    color: #666;
+    cursor: pointer;
 }
 
 
 
 .result-container {
-  text-align: center;
-  padding: 40px;
-  font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 40px;
+    font-family: Arial, sans-serif;
 }
 
 .score-box {
-  margin: 30px auto;
-  padding: 20px;
-  background-color: #eee;
-  border-radius: 10px;
-  width: 200px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #eee;
+    border-radius: 10px;
+    width: 200px;
 }
 
 #score-value {
-  font-size: 48px;
-  font-weight: bold;
-  color: maroon;
+    font-size: 48px;
+    font-weight: bold;
+    color: maroon;
 }
 
 button {
-  padding: 15px 30px;
-  font-size: 18px;
-  background-color: #333;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
+    padding: 15px 30px;
+    font-size: 18px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
 }
 
 button:hover {
-  background-color: #555;
+    background-color: #555;
 }
 /* Sam's code end */
 
+small{
+    font-size: 1rem;
+}
 
+.startScreen, .gameOver{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(141, 167, 177);
+    width: 100%;
+    height: 100%;
+}
+.gameOver{
+    display: none;
+}
+#startTrick{
+    background-color: rgba(0, 0, 0, 0);
+    border: solid 2px;
+}
+
+.show{
+    font-size: 3rem;
+}
+.showMinus{
+    visibility: hidden;
+}
+.showAdd{
+    visibility: hidden;
+}
+.timerSlot{
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#memTimer, #playTimer{
+    font-family: 'Slackey';
+    font-size: 2rem;
+    text-align: center;
+}
+h3{
+    font-family: 'DynaPuff';
+}
 .memorize{
     display: none;
+    height: 80%;
+    flex-direction: column;
+    font-family: 'DynaPuff';
+}
+#order{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#order h3{
+    margin: 0;
+    margin-bottom: 10%;
+}
+.orderContainer{
+    background-color: rgb(219, 219, 190);
+    padding: 10% 5%;
+    margin-top: 20%;
+    margin-bottom: 50%;
+}
+.readyButton{
+    font-family: 'Slackey';
+    text-align: center;
 }
 
 .gamePlay{
     display: none;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'DynaPuff';
+}
+.gameOption{
+    margin-top: 10%;    
+    margin-bottom: 10%;    
+    height: 60%;
+    width: 90%;
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(2,1fr);
 }
 
-.gameOver{
-    display: none;
+
+.gameOver p{
+    font-size: 2rem;
+    text-align: center;
+    font-family: 'Slackey';
+}
+.gameOver h2{
+    margin: 0;
+    margin-bottom: 20px;
+    text-align: center;
+    font-family: 'DynaPuff';
+}
+#score-value, #result-message{
+    font-family: 'DynaPuff';
+}
+#result-message{
+    font-size: 1rem;
 }

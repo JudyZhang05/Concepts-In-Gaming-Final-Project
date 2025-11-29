@@ -18,6 +18,8 @@ let playMin = 1
 let playSec = 0
 // difficulty level: easy = 2 items , intermediate = 4 items, hard = 6 items
 let difficulty = 2
+const showAdd = document.querySelector('.showAdd')
+const showMinus = document.querySelector('.showMinus')
 
 // Sam's pages
 const startScreen = document.querySelector('.startScreen')
@@ -41,7 +43,7 @@ let newGame = () => {
             difficulty++
         }else{
             newList[`${thisPlace}`] = thisObject
-            organizeList.innerHTML += `${thisObject} in ${thisPlace}<br>`
+            organizeList.innerHTML += `${thisObject} in ${thisPlace}<br><br>`
         }
     }
     if(totalPlayTime < 120){
@@ -130,7 +132,7 @@ getGameChoices()
 setInterval(() => {
     if(startScreen.style.display == 'none' && gameOver.style.display == 'none'){
         if(memorize.style.display == 'none'){
-            gamePlay.style.display = 'block'
+            gamePlay.style.display = 'flex'
             totalPlayTime++
             if(totalPlayTime%120 == 0){
                 if(totalPlayTime >= 180){
@@ -138,11 +140,12 @@ setInterval(() => {
                 }else if(totalPlayTime == 120){
                     difficulty = 4
                 }
+                gamePlay.style.display = 'none'
+                remSec = 30
+                memorize.style.display = 'flex'
                 newGame()
                 getItems()
                 getGameChoices()
-                remSec = 30
-                memorize.style.display = 'block'
             }
             playTimer.textContent = `${playMin}:${String(playSec).padStart(2, '0')}`
             if(playSec <= 0){
@@ -152,7 +155,7 @@ setInterval(() => {
                 }else{
                     gamePlay.style.display = 'none'
                     getScore()
-                    gameOver.style.display = 'block'
+                    gameOver.style.display = 'flex'
                 }
             }else{
                 playSec--
@@ -175,9 +178,16 @@ gameOption.addEventListener('click', (e) => {
         if(newList[`${e.target.classList[0]}`] == correctChoice){
             changePlayTime(0)
             playerScore+=1
-            console.log(playerScore)
+            showAdd.style.visibility = 'visible'
+            setTimeout(() => {
+                showAdd.style.visibility = 'hidden'
+            }, 800)
         }else{ // if choice is wrong
             changePlayTime(1)
+            showMinus.style.visibility = 'visible'
+            setTimeout(() => {
+                showMinus.style.visibility = 'hidden'
+            }, 800)
         }
         getItems()
         getGameChoices()
@@ -190,11 +200,11 @@ const startTrick = document.querySelector('#startTrick')
 startBtn.addEventListener('click', () => {
     startScreen.style.display = 'none'
     gameOver.style.display = 'none'
-    memorize.style.display = 'block'
+    memorize.style.display = 'flex'
 })
 startTrick.addEventListener('click', () => {
     startTrick.style.display = 'none'
-    alert('Yes')
+    alert('yes, stop asking questions.')
 })
 
 

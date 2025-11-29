@@ -6,6 +6,10 @@
     <title>The Cleaner</title>
     <title>Concepts In Gaming - Final Project</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&family=Slackey&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -14,7 +18,7 @@
     <a href="./screens/startscreen.html">start</a> -->
     <div class="startScreen">
       <div class="main-box">
-        CLEAN<br>MY<br>DESK<br>(please)
+        CLEAN<br>MY<br>DESK<br><small>(please)</small>
       </div>
 
       <div class="button-group">
@@ -40,12 +44,14 @@
           <p id="organizeList"></p>
         </div>
       </div>
-      <div class="readyButton">PUT ME IN COACH!</div>
+      <button class="readyButton">PUT ME IN COACH!</button>
     </div>
     
     <div class="gamePlay">
       <div class="timerSlot">
-        <p id="playTimer"></p>
+        <p class="show showMinus">-5</p>
+        <p id="playTimer">1:00</p>
+        <p class="show showAdd">+5</p>
       </div>
       <div class="gameObject"></div>
       <div class="gameOption"></div>
