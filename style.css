@@ -1,5 +1,12 @@
 
 /* Sam's code*/
+.game-title {
+  font-size: 32px;
+  color:maroon;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
 body {
     margin: 0;
     padding: 0;
