@@ -1,6 +1,105 @@
 
-.memorize{
+/* Sam's code*/
+.startScreen{
     display: block;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #8796c7;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.main-box {
+  background-color: #ccc;
+  padding: 40px;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 1.5;
+}
+
+.button-group {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 80%;
+  max-width: 300px;
+}
+
+button {
+  padding: 15px;
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
+  background-color: #333;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #555;
+}
+
+.footer-arrow {
+  margin-top: 40px;
+  font-size: 16px;
+  color: #666;
+  cursor: pointer;
+}
+
+
+
+.result-container {
+  text-align: center;
+  padding: 40px;
+  font-family: Arial, sans-serif;
+}
+
+.score-box {
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #eee;
+  border-radius: 10px;
+  width: 200px;
+}
+
+#score-value {
+  font-size: 48px;
+  font-weight: bold;
+  color: maroon;
+}
+
+button {
+  padding: 15px 30px;
+  font-size: 18px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #555;
+}
+/* Sam's code end */
+
+
+.memorize{
+    display: none;
+}
+
+.gamePlay{
+    display: none;
 }
 
 .gameOver{

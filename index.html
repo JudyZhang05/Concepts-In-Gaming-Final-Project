@@ -8,10 +8,27 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <!-- Sam's pages -->
     <!-- <a href="./screens/endresultScreen.html">end</a>
     <a href="./screens/startscreen.html">start</a> -->
-    <div class="startScreen"></div>
+    <div class="startScreen">
+      <div class="main-box">
+        CLEAN<br>MY<br>DESK<br>(please)
+      </div>
+
+      <div class="button-group">
+        <button id="start">YOU GOT IT!</button>
+        <button id="startTrick">FOR FREE?!</button>
+      </div>
+
+      <div class="footer-arrow" onclick="handleArrowClick()">
+        <!-- If user presses on this, just remove the button entirely and prompt them with an alert saying “Yes” LOL-->
+      </div>
+    </div>
+    <!-- Sam's code end -->
+
+
 
     <div class="memorize">
       <div class="timerSlot">
@@ -31,20 +48,30 @@
         <p id="playTimer"></p>
       </div>
       <div class="gameObject"></div>
-      <div class="gameOption">
-        <!-- <p id="pen"></p>
-        <p id="brush"></p>
-        <p id="trash"></p>
-        <p id="sticker"></p>
-        <p id="photo"></p>
-        <p id="clip"></p> -->
-      </div>
+      <div class="gameOption"></div>
     </div>
     
+
+
     <div class="gameOver">
       <p>GAME OVER!</p>
+      
+      <!-- Sam's code -->
+      <div class="result-container">
+        <h1 id="result-message">Loading result...</h1>
+
+        <div class="score-box">
+          <h2>SCORE</h2>
+          <div id="score-value">0</div>
+        </div>
+
+        <button onclick="runAgain()">RUN IT AGAIN!</button>
+      </div>
+
+
     </div>
-    
+  <!-- Sam's code end -->
+
   <script src="script.js"></script>
 </body>
 </html>

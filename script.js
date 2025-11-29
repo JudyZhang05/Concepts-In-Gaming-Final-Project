@@ -8,6 +8,8 @@ const readyButton = document.querySelector('.readyButton')
 let newList = {}
 let placeKeys
 let correctChoice
+let playerScore = 0
+const gamePlay = document.querySelector('.gamePlay')
 const gameObject = document.querySelector('.gameObject')
 const gameOption = document.querySelector('.gameOption')
 let totalPlayTime = 0
@@ -83,7 +85,7 @@ const changePlayTime = (gameResponse) => {
 
 const getItems = () => {
     gameObject.innerHTML = ''
-    console.log(difficulty)
+    // console.log(difficulty)
     let rando = Math.floor(Math.random() * difficulty)
     correctChoice = newList[`${placeKeys[rando]}`]
 
@@ -121,14 +123,15 @@ const getGameChoices = () => {
 }
 
 // start game timer(s) when user press play
-if(startScreen.style.display = 'none'){
-    newGame()
-    getItems()
-    getGameChoices()
-    setInterval(() => {
+
+newGame()
+getItems()
+getGameChoices()
+setInterval(() => {
+    if(startScreen.style.display == 'none' && gameOver.style.display == 'none'){
         if(memorize.style.display == 'none'){
+            gamePlay.style.display = 'block'
             totalPlayTime++
-            console.log(totalPlayTime)
             if(totalPlayTime%120 == 0){
                 if(totalPlayTime >= 180){
                     difficulty = 6
@@ -147,7 +150,8 @@ if(startScreen.style.display = 'none'){
                     playSec = 59
                     playMin--
                 }else{
-                    playTimer.style.display = 'none'
+                    gamePlay.style.display = 'none'
+                    getScore()
                     gameOver.style.display = 'block'
                 }
             }else{
@@ -159,9 +163,10 @@ if(startScreen.style.display = 'none'){
             if(memTimer.textContent == '0:00'){
                 memorize.style.display = 'none'
             }
+            gamePlay.style.display = 'none'
         }
-    }, 1000)
-}
+    }
+}, 1000)
 
 // game responds after user action
 gameOption.addEventListener('click', (e) => {
@@ -169,6 +174,8 @@ gameOption.addEventListener('click', (e) => {
         // if choice is correct
         if(newList[`${e.target.classList[0]}`] == correctChoice){
             changePlayTime(0)
+            playerScore+=1
+            console.log(playerScore)
         }else{ // if choice is wrong
             changePlayTime(1)
         }
@@ -177,3 +184,35 @@ gameOption.addEventListener('click', (e) => {
     }
 
 })
+
+const startBtn = document.querySelector('#start')
+const startTrick = document.querySelector('#startTrick')
+startBtn.addEventListener('click', () => {
+    startScreen.style.display = 'none'
+    gameOver.style.display = 'none'
+    memorize.style.display = 'block'
+})
+startTrick.addEventListener('click', () => {
+    startTrick.style.display = 'none'
+    alert('Yes')
+})
+
+
+// Sam's code
+function getScore(){
+    document.getElementById("score-value").textContent = playerScore;
+
+    const message = document.getElementById("result-message");
+    if (playerScore >= 80) {
+        message.textContent = "PRESTIGE UNLOCKED: You are... The Cleaner!";
+    } else if (playerScore >= 50) {
+        message.textContent = "Not bad... but there's still grime.";
+    } else {
+        message.textContent = "WOW! Did you even try?";
+    }
+}
+
+
+function runAgain() {
+    window.location.href = "index.html"; // or restart game logic
+}
