@@ -1,6 +1,6 @@
 
 /* Sam's code*/
-.game-title {
+.game-title, h1 {
   font-size: 32px;
   color:maroon;
   margin-bottom: 20px;
