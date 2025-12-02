@@ -233,24 +233,20 @@ function handleArrowClick() {
     }
 
     // ADDED: Music Handling Script
-    function() { // Wrap in an immediately invoked function to keep scope clean
-        const music = document.getElementById('startScreenMusic');
-        const toggleButton = document.getElementById('musicToggle');
+(function() {
+    const music = document.getElementById('startScreenMusic');
+    const toggleButton = document.getElementById('musicToggle');
 
-        toggleButton.addEventListener('click', function() {
-            if (music.paused) {
-                // Try to play the music
-                music.play().then(() => {
-                    toggleButton.textContent = 'Pause Music 🔊';
-                }).catch(e => {
-                    // This happens if the browser blocked autoplay before user click
-                    alert("Music could not autoplay. Please click again.");
-                    toggleButton.textContent = 'Play Music 🔇';
-                });
-            } else {
-                // Pause the music
-                music.pause();
+    toggleButton.addEventListener('click', function() {
+        if (music.paused) {
+            music.play().then(() => {
+                toggleButton.textContent = 'Pause Music 🔊';
+            }).catch(e => {
+                alert("Music could not autoplay. Please click again.");
                 toggleButton.textContent = 'Play Music 🔇';
-            }
-        });
-    }();
+            });
+        } else {
+            music.pause();
+            toggleButton.textContent = 'Play Music 🔇';
+        }
+    });
