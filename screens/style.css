@@ -6,14 +6,6 @@
 @media screen and (min-width: 768px) {
 }  /* CSS rules for large screens*
 
-.game-title, h1 {
-  font-size: 40px;
-  color:dark-orange;
-  margin-bottom: 20px;
-  text-align: center;
-  font-family: 'Slackey';
-}
-
 body {
   margin: 0;
   padding: 0;
