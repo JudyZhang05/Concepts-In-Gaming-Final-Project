@@ -248,10 +248,10 @@ function runAgain() {
 
 function endGame() {
   const music = document.getElementById("end-music");
-  music.pause();
+  endMusic.pause();
 
   const endMusic = document.getElementById("end-music");
-  if (music.paused) 
+  if (endMusic.paused) 
   endMusic.currentTime = 0;
   endMusic.play().catch (err => console.log("Playback blocked:",err));
   endMusic.volume = 2;
