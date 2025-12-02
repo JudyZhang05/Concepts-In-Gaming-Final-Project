@@ -235,6 +235,7 @@ function handleArrowClick() {
     // ADDED: Music Handling Script
 (function() {
     const music = document.getElementById('startScreenMusic');
+    const music = document.getElementById('endScreenMusic');
     const toggleButton = document.getElementById('musicToggle');
 
     toggleButton.addEventListener('click', function() {
