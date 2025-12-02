@@ -230,7 +230,7 @@ function runAgain() {
      document.getElementById("start-music").play();
      window.location.hef = "index.html";
 
-  const music = document.getElementById("bg-music");
+  const music = document.getElementById("start-music");
   music.currentTime = 0; // reset to start
   music.play(); // user action allows playback
 
@@ -245,7 +245,7 @@ function runAgain() {
 }
 
 function endGame() {
-  const music = document.getElementById("bg-music");
+  const music = document.getElementById("end-music");
   music.pause();
 
   const endMusic = document.getElementById("end-music");
