@@ -227,19 +227,36 @@ function runAgain() {
     window.location.href = "index.html"; // or restart game logic
 }
 
-    // Get a reference to your audio element
-    const backgroundMusic = document.getElementById('background-music');
+  function startGame() {
+  // Switch screens
+  document.getElementById("start-screen").style.display = "none";
+  document.getElementById("game-screen").style.display = "block";
 
-    // Function to unmute the music
-    function unmuteMusic() {
-        if (backgroundMusic.muted) {
-            backgroundMusic.muted = false;
-            // Optional: You can remove the listener so it only happens once
-            document.body.removeEventListener('click', unmuteMusic);
-            document.body.removeEventListener('touchstart', unmuteMusic);
-        }
-    }
+  // Stop start music, play gameplay music
+  document.getElementById("start-music").pause();
+  document.getElementById("game-music").currentTime = 0;
+  document.getElementById("game-music").play();
+}
 
-    // Add event listeners for user interactions (click and tap)
-    document.body.addEventListener('click', unmuteMusic);
-    document.body.addEventListener('touchstart', unmuteMusic); // For mobile devices
+function endGame() {
+    
+  // Switch screens
+  document.getElementById("game-screen").style.display = "none";
+  document.getElementById("end-screen").style.display = "block";
+
+  // Stop gameplay music, play end music
+  document.getElementById("game-music").pause();
+  document.getElementById("end-music").currentTime = 0;
+  document.getElementById("end-music").play();
+}
+
+function restartGame() {
+  // Switch back to start
+  document.getElementById("end-screen").style.display = "none";
+  document.getElementById("start-screen").style.display = "block";
+
+  // Stop end music, play start music again
+  document.getElementById("end-music").pause();
+  document.getElementById("start-music").currentTime = 0;
+  document.getElementById("start-music").play();
+}
