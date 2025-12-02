@@ -229,8 +229,11 @@ function runAgain() {
  function startGame() {
      document.getElementById("start-music").play();
      window.location.hef = "index.html";
- }
-  function startGame() {
+
+  const music = document.getElementById("bg-music");
+  music.currentTime = 0; // reset to start
+  music.play(); // user action allows playback
+
   // Switch screens
   document.getElementById("start-screen").style.display = "none";
   document.getElementById("game-screen").style.display = "block";
@@ -242,7 +245,13 @@ function runAgain() {
 }
 
 function endGame() {
-    
+  const music = document.getElementById("bg-music");
+  music.pause();
+
+  const endMusic = document.getElementById("end-music");
+  endMusic.currentTime = 0;
+  endMusic.play();
+
   // Switch screens
   document.getElementById("game-screen").style.display = "none";
   document.getElementById("end-screen").style.display = "block";
