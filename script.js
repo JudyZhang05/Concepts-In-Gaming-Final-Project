@@ -232,7 +232,8 @@ function runAgain() {
 
   const music = document.getElementById("start-music");
   music.currentTime = 0; // reset to start
-  music.play(); // user action allows playback
+  music.volume = 2;
+  music.play().catch (err => console.log("Playback blocked:",err)); // user action allows playback
 
   // Switch screens
   document.getElementById("start-screen").style.display = "none";
@@ -250,7 +251,8 @@ function endGame() {
 
   const endMusic = document.getElementById("end-music");
   endMusic.currentTime = 0;
-  endMusic.play();
+  endMusic.play().catch (err => console.log("Playback blocked:",err));
+  endMusic.volume = 2;
 
   // Switch screens
   document.getElementById("game-screen").style.display = "none";
