@@ -260,3 +260,85 @@ function handleArrowClick() {
         });
     }
 })();
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Get all audio elements
+    const musicStart = document.getElementById('musicStart');
+    const musicGame = document.getElementById('musicGame');
+    const musicEnd = document.getElementById('musicEnd');
+    const masterToggle = document.getElementById('masterMusicToggle');
+    const storageKey = 'gameMusicMuted'; // true or false string
+    
+    let isMuted = localStorage.getItem(storageKey) === 'true';
+
+    // Function to set the initial button icon based on saved preference
+    function updateToggleButtonUI() {
+        masterToggle.textContent = isMuted ? '🔇' : '🔊';
+    }
+
+    // Function to stop all music and set the mute state
+    function stopAllMusic() {
+        [musicStart, musicGame, musicEnd].forEach(m => {
+            m.pause();
+            m.currentTime = 0; // Reset to start
+        });
+    }
+
+    // Function to manage which track plays
+    window.switchMusic = function(screenName) {
+        stopAllMusic();
+        let targetMusic;
+
+        if (screenName === 'start') {
+            targetMusic = musicStart;
+        } else if (screenName === 'gameplay') {
+            targetMusic = musicGame;
+        } else if (screenName === 'end') {
+            targetMusic = musicEnd;
+        }
+
+        if (targetMusic && !isMuted) {
+            // Attempt to play only if user hasn't muted system-wide
+            // This still relies on the user making the very first interaction on the page.
+            targetMusic.play().catch(e => console.log("Autoplay blocked, user interaction required first."));
+        }
+    }
+
+    // Master Toggle Button Handler
+    masterToggle.addEventListener('click', () => {
+        isMuted = !isMuted; // Flip the mute state
+        localStorage.setItem(storageKey, isMuted); // Save preference
+        updateToggleButtonUI(); // Update icon
+
+        if (isMuted) {
+            stopAllMusic();
+        } else {
+            // If unmuting, figure out which screen we are currently on 
+            // and restart its music (you need to implement logic here 
+            // to check which screen div is visible in your game state)
+            // Example: Assuming your game uses a global variable or checks CSS display:
+            // if (document.querySelector('.startScreen').style.display !== 'none') {
+            //     switchMusic('start');
+            // }
+            // For now, it will only play if navigate screens using switchMusic()
+        }
+    });
+
+    // Initialize UI state
+    updateToggleButtonUI(); 
+
+    // Start with the start screen music when the page first loads
+    switchMusic('start');
+});
+
+// (make sure they link here, not use onclick="")
+function handleArrowClick() {
+    document.querySelector('.footer-arrow').remove();
+    alert("Yes");
+}
+
+function runAgain() {
+    // When restarting the game, switch the music back to the start track
+    window.switchMusic('start'); 
+    // window.location.href = "index.html"; // If using multiple pages, otherwise use SPA navigation JS
+}
