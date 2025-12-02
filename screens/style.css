@@ -29,9 +29,9 @@ body {
 .main-box {
   background-color: #ccc;
   padding: 60px;
-  border-radius: 10px;
+  border-radius: 20px;
   text-align: center;
-  font-size: 34px;
+  font-size: 26px;
   font-weight: bold;
   line-height: 1.5;
 }
