@@ -250,3 +250,12 @@ function handleArrowClick() {
             toggleButton.textContent = 'Play Music 🔇';
         }
     });
+      // also make the arrow click handler go here!
+    const arrow = document.querySelector('.footer-arrow');
+    if (arrow) {
+        arrow.addEventListener('click', function() {
+            arrow.remove();
+            alert("Yes");
+        });
+    }
+})();
