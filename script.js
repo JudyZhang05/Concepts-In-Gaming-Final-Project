@@ -226,7 +226,10 @@ function getScore(){
 function runAgain() {
     window.location.href = "index.html"; // or restart game logic
 }
-
+ function startGame() {
+     document.getElementById("start-music").play();
+     window.location.hef = "index.html";
+ }
   function startGame() {
   // Switch screens
   document.getElementById("start-screen").style.display = "none";
