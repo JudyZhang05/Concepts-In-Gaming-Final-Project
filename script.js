@@ -231,6 +231,7 @@ function runAgain() {
      window.location.hef = "index.html";
 
   const music = document.getElementById("start-music");
+  if (music.paused) 
   music.currentTime = 0; // reset to start
   music.volume = 2;
   music.play().catch (err => console.log("Playback blocked:",err)); // user action allows playback
@@ -250,6 +251,7 @@ function endGame() {
   music.pause();
 
   const endMusic = document.getElementById("end-music");
+  if (music.paused) 
   endMusic.currentTime = 0;
   endMusic.play().catch (err => console.log("Playback blocked:",err));
   endMusic.volume = 2;
