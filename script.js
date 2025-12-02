@@ -226,3 +226,31 @@ function getScore(){
 function runAgain() {
     window.location.href = "index.html"; // or restart game logic
 }
+
+function handleArrowClick() {
+      document.querySelector('.footer-arrow').remove();
+      alert("Yes");
+    }
+
+    // ADDED: Music Handling Script
+    function() { // Wrap in an immediately invoked function to keep scope clean
+        const music = document.getElementById('startScreenMusic');
+        const toggleButton = document.getElementById('musicToggle');
+
+        toggleButton.addEventListener('click', function() {
+            if (music.paused) {
+                // Try to play the music
+                music.play().then(() => {
+                    toggleButton.textContent = 'Pause Music 🔊';
+                }).catch(e => {
+                    // This happens if the browser blocked autoplay before user click
+                    alert("Music could not autoplay. Please click again.");
+                    toggleButton.textContent = 'Play Music 🔇';
+                });
+            } else {
+                // Pause the music
+                music.pause();
+                toggleButton.textContent = 'Play Music 🔇';
+            }
+        });
+    }();
