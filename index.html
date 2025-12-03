@@ -14,6 +14,19 @@
 <body>
 
     <!-- Sam's pages -->
+    <!-- Audio Elements (Added here, controlled by script.js) -->
+    <audio id="start-music" loop>
+        <source src="start_screen_music.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <audio id="gameplay-music" loop>
+        <source src="gameplay_music.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <audio id="end-music" loop>
+        <source src="end_screen_music.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
     <!-- <a href="./screens/endresultScreen.html">end</a>
     <a href="./screens/startscreen.html">start</a> -->
 
@@ -84,7 +97,52 @@
 
     </div>
   <!-- Sam's code end -->
+    
+  <!-- Include necessary JS logic to manage music playback -->
+  <script>
+    // Helper function to stop all music tracks
+    function stopAllMusic() {
+      document.getElementById('start-music').pause();
+      document.getElementById('gameplay-music').pause();
+      document.getElementById('end-music').pause();
+      document.getElementById('start-music').currentTime = 0;
+      document.getElementById('gameplay-music').currentTime = 0;
+      document.getElementById('end-music').currentTime = 0;
+    }
 
+    // Function to play the start music when the first interaction occurs
+    function playStartMusic() {
+      stopAllMusic();
+      document.getElementById('start-music').play().catch(e => console.error("Start music failed to play:", e));
+    }
+
+    // Function to play gameplay music (call this from script.js when game starts)
+    function playGameplayMusic() {
+      stopAllMusic();
+      document.getElementById('gameplay-music').play().catch(e => console.error("Gameplay music failed to play:", e));
+    }
+
+    // Function to play end screen music (call this from script.js when game ends)
+    function playEndMusic() {
+      stopAllMusic();
+      document.getElementById('end-music').play().catch(e => console.error("End music failed to play:", e));
+    }
+
+    // Existing helper functions from previous examples/user code
+    function handleArrowClick() {
+      document.querySelector('.footer-arrow').remove();
+      alert("Yes");
+    }
+    
+    // The runAgain function should likely be updated in your main script.js 
+    // to stop all music before redirecting or restarting the game state.
+    function runAgain() {
+        stopAllMusic(); // Stop music before potentially leaving the page
+        // window.location.href = "index.html"; // If using multi-page
+        // Or call your script.js function to reset the game state
+    }
+
+  </script>
   <script src="script.js"></script>
 </body>
 </html>
