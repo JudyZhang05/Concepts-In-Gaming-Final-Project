@@ -9,7 +9,6 @@
 <body>
  <audio id="background-music" loop>
     <source src="chill-music-loop-183100.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
   </audio>
  
   <div class="result-container">
@@ -29,11 +28,11 @@
       const audio = document.getElementById('background-music');
       // .play() returns a Promise which helps manage browser autoplay restrictions
       audio.play().catch(error => {
-        // You might log this error or show a "Play Music" button if it fails automatically
+        //  "Play Music" button if it fails automatically
         console.error("Music playback failed:", error);
       });
     }
-    // Simulated score (replace with actual game logic)
+    // Simulated score (actual game logic)
     const playerScore = Math.floor(Math.random() * 101); // 0–100
 
     document.getElementById("score-value").textContent = playerScore;
