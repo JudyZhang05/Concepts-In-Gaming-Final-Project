@@ -231,3 +231,7 @@ function handleArrowClick() {
       document.querySelector('.footer-arrow').remove();
       alert("Yes");
     }
+// Call this on the first button click: <button onclick="playStartMusic()">
+function playStartMusic() {
+  document.getElementById('start-music').play().catch(e => console.error(e));
+}
