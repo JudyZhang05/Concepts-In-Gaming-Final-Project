@@ -226,20 +226,3 @@ function getScore(){
 function runAgain() {
     window.location.href = "index.html"; // or restart game logic
 }
-
-    // Get a reference to your audio element
-    const backgroundMusic = document.getElementById('background-music');
-
-    // Function to unmute the music
-    function unmuteMusic() {
-        if (backgroundMusic.muted) {
-            backgroundMusic.muted = false;
-            // Optional: You can remove the listener so it only happens once
-            document.body.removeEventListener('click', unmuteMusic);
-            document.body.removeEventListener('touchstart', unmuteMusic);
-        }
-    }
-
-    // Add event listeners for user interactions (click and tap)
-    document.body.addEventListener('click', unmuteMusic);
-    document.body.addEventListener('touchstart', unmuteMusic); // For mobile devices
