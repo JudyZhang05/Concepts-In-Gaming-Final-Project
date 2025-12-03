@@ -108,6 +108,9 @@ small{
 }
 .gameOver{
     display: none;
+    
+.timesup{
+    display: none;
 }
 #startTrick{
     background-color: rgba(0, 0, 0, 0);
