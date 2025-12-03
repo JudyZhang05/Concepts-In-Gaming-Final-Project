@@ -20,10 +20,10 @@ body {
 
 .main-box {
   background-color: #ccc;
-  padding: 60px;
-  border-radius: 20px;
+  padding: 70px;
+  border-radius: 30px;
   text-align: center;
-  font-size: 26px;
+  font-size: 33px;
   font-weight: bold;
   line-height: 1.5;
 }
