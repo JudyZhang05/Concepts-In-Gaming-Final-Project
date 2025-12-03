@@ -99,50 +99,56 @@
   <!-- Sam's code end -->
     
   <!-- Include necessary JS logic to manage music playback -->
-  <script>
-    // Helper function to stop all music tracks
-    function stopAllMusic() {
-      document.getElementById('start-music').pause();
-      document.getElementById('gameplay-music').pause();
-      document.getElementById('end-music').pause();
-      document.getElementById('start-music').currentTime = 0;
-      document.getElementById('gameplay-music').currentTime = 0;
-      document.getElementById('end-music').currentTime = 0;
-    }
+    <script>
+        // Define ALL music control functions here to ensure they exist on load
+        function stopAllMusic() {
+            // Check if element exists before trying to pause/reset
+            const startMusic = document.getElementById('start-music');
+            const gameplayMusic = document.getElementById('gameplay-music');
+            const endMusic = document.getElementById('end-music');
+            
+            if (startMusic) { startMusic.pause(); startMusic.currentTime = 0; }
+            if (gameplayMusic) { gameplayMusic.pause(); gameplayMusic.currentTime = 0; }
+            if (endMusic) { endMusic.pause(); endMusic.currentTime = 0; }
+        }
 
-    // Function to play the start music when the first interaction occurs
-    function playStartMusic() {
-      stopAllMusic();
-      document.getElementById('start-music').play().catch(e => console.error("Start music failed to play:", e));
-    }
+        // The function linked to your "Start" buttons
+        function playStartMusic() {
+            stopAllMusic();
+            // .play() must be called directly within the user-gesture handler
+            document.getElementById('start-music').play().catch(e => console.error("Start music failed:", e));
+            // This function effectively "unlocks" audio for the entire page now
+        }
 
-    // Function to play gameplay music (call this from script.js when game starts)
-    function playGameplayMusic() {
-      stopAllMusic();
-      document.getElementById('gameplay-music').play().catch(e => console.error("Gameplay music failed to play:", e));
-    }
+        // Function to transition to gameplay music (call this from script.js)
+        function playGameplayMusic() {
+            stopAllMusic();
+            document.getElementById('gameplay-music').play().catch(e => console.error("Gameplay music failed:", e));
+        }
 
-    // Function to play end screen music (call this from script.js when game ends)
-    function playEndMusic() {
-      stopAllMusic();
-      document.getElementById('end-music').play().catch(e => console.error("End music failed to play:", e));
-    }
+        // Function to transition to end screen music (call this from script.js)
+        function playEndMusic() {
+            stopAllMusic();
+            document.getElementById('end-music').play().catch(e => console.error("End music failed:", e));
+        }
+        
+        // Ensure the original functions from your HTML still work if you had them here
+        function handleArrowClick() {
+            // We call playStartMusic() here too, just in case this is the first click
+            playStartMusic(); 
+            const arrow = document.querySelector('.footer-arrow');
+            if (arrow) arrow.remove();
+            alert("Yes");
+        }
 
-    // Existing helper functions from previous examples/user code
-    function handleArrowClick() {
-      document.querySelector('.footer-arrow').remove();
-      alert("Yes");
-    }
+        function runAgain() {
+            stopAllMusic(); // Stop music before redirecting
+            window.location.href = "index.html"; 
+        }
+    </script>
     
-    // The runAgain function should likely be updated in your main script.js 
-    // to stop all music before redirecting or restarting the game state.
-    function runAgain() {
-        stopAllMusic(); // Stop music before potentially leaving the page
-        // window.location.href = "index.html"; // If using multi-page
-        // Or call your script.js function to reset the game state
-    }
+    <!-- Your main game logic script -->
 
-  </script>
   <script src="script.js"></script>
 </body>
 </html>
