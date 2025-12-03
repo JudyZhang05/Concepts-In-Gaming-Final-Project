@@ -7,6 +7,10 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <audio id="background-music" loop>
+    <source src="your_music_file.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
 
   <div id="start-screen" class="screen">
   <div class="main-box">
@@ -27,6 +31,29 @@
     function handleArrowClick() {
       document.querySelector('.footer-arrow').remove();
       alert("Yes");
+    }
+  </script>
+  
+  <script>
+    // Function to handle the arrow click as requested
+    function handleArrowClick() {
+      // Start music when the arrow is clicked
+      playMusic();
+      document.querySelector('.footer-arrow').remove();
+      alert("Yes");
+    }
+
+    // Function to play the audio element
+    function playMusic() {
+      const audio = document.getElementById('background-music');
+      // Using .play() returns a Promise which handles browser autoplay restrictions
+      audio.play().catch(error => {
+        // Handle potential errors if playback somehow still fails
+        console.error("Music playback failed:", error);
+      });
+      // Optional: Remove the onclick handlers from buttons after music starts
+      document.querySelector('.button-group button:first-child').onclick = () => alert('You got it!');
+      document.querySelector('.button-group button:last-child').onclick = () => alert('For free?!');
     }
   </script>
 </body>
