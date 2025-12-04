@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.19 203.52">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #e96aa8;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5 {
+        stroke: #231f20;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-6 {
+        fill: #231f20;
+      }
+
+      .cls-2 {
+        fill: #f7ec13;
+      }
+
+      .cls-3 {
+        fill: #d1d3d4;
+      }
+
+      .cls-4 {
+        fill: #ffdfaf;
+      }
+
+      .cls-5 {
+        fill: none;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <g>
+      <rect class="cls-2" x=".66" y="24.53" width="17.87" height="158.29"/>
+      <polygon class="cls-4" points="9.6 202.32 18.41 183.06 .78 183.06 9.6 202.32"/>
+      <polygon class="cls-6" points="9.6 202.32 6.81 196.24 12.44 196.11 9.6 202.32"/>
+      <rect class="cls-1" x=".66" y=".5" width="17.87" height="17.87" rx="6.12" ry="6.12"/>
+      <rect class="cls-3" x=".66" y="12.25" width="17.87" height="12.28"/>
+      <line class="cls-5" x1="2.76" y1="12.25" x2="2.76" y2="24.53"/>
+      <line class="cls-5" x1="4.99" y1="12.25" x2="4.99" y2="24.53"/>
+      <line class="cls-5" x1="7.36" y1="12.25" x2="7.36" y2="24.53"/>
+      <line class="cls-5" x1="9.6" y1="12.25" x2="9.6" y2="24.53"/>
+      <line class="cls-5" x1="11.69" y1="12.25" x2="11.69" y2="24.53"/>
+      <line class="cls-5" x1="13.92" y1="12.25" x2="13.92" y2="24.53"/>
+      <line class="cls-5" x1="16.3" y1="12.25" x2="16.3" y2="24.53"/>
+      <line class="cls-5" x1="18.53" y1="12.25" x2="18.53" y2="24.53"/>
+    </g>
+  </g>
+</svg>
