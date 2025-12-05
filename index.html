@@ -90,7 +90,26 @@
 
         <button onclick="runAgain()">RUN IT AGAIN!</button>
       </div>
+  <script>
+  
+    // Simulated score (replace with actual game logic)
+    const playerScore = Math.floor(Math.random() * 101); // 0–100
 
+    document.getElementById("score-value").textContent = playerScore;
+
+    const message = document.getElementById("result-message");
+    if (playerScore >= 80) {
+      message.textContent = "PRESTIGE UNLOCKED: You are... The Cleaner!";
+    } else if (playerScore >= 50) {
+      message.textContent = "Not bad... but there's still grime.";
+    } else {
+      message.textContent = "WOW! Did you even try?";
+    }
+
+    function runAgain() {
+      window.location.href = "index.html"; // or restart game logic
+    }
+  </script>
 
     </div>
 </div>
