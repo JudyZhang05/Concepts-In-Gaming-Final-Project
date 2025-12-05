@@ -14,8 +14,8 @@ const gameObject = document.querySelector('.gameObject')
 const gameOption = document.querySelector('.gameOption')
 let totalPlayTime = 0
 let remSec = 30
-let playMin = 1
-let playSec = 0
+let playMin = 0
+let playSec = 30
 // difficulty level: easy = 2 items , intermediate = 4 items, hard = 6 items
 let difficulty = 2
 const showAdd = document.querySelector('.showAdd')
@@ -25,9 +25,9 @@ const showMinus = document.querySelector('.showMinus')
 const startScreen = document.querySelector('.startScreen')
 
 // declaring dictionary objects
-const allMessyObjects = {'pen':'test','brush':'test','trash':'test','stickers':'test','photo':'test', 'clip':'test'}
+const allMessyObjects = {'Pencil':'CMD_Pencil', 'Ribbon':'CMD_Ribbon','Trash':'test','Sticker':'CMD_Sticker','photo':'test', 'Paper-Clip':'CMD_PaperClip', 'Paper-Stack': 'CMD_PaperStack'}
 const allMessyKeys = Object.keys(allMessyObjects)
-const allPlaces = {'drawer':'test','trash-can':'test','bag':'test','book':'test','binder':'test', 'cup':'test'}
+const allPlaces = {'drawer':'test','Trash-Can':'CMD_Trashcan','bag':'test','book':'test','binder':'test', 'cup':'test'}
 const allPlacesKeys = Object.keys(allPlaces)
 
 // generate new list
@@ -46,11 +46,11 @@ let newGame = () => {
             organizeList.innerHTML += `${thisObject} in ${thisPlace}<br><br>`
         }
     }
-    if(totalPlayTime < 120){
+    if(totalPlayTime < 60){
         difficulty = 2
-    }else if(totalPlayTime >= 120){
+    }else if(totalPlayTime >= 60){
         difficulty = 4
-    }else if(totalPlayTime >= 180){
+    }else if(totalPlayTime >= 120){
         difficulty = 6
     }
     placeKeys = Object.keys(newList)
@@ -134,10 +134,10 @@ setInterval(() => {
         if(memorize.style.display == 'none'){
             gamePlay.style.display = 'flex'
             totalPlayTime++
-            if(totalPlayTime%120 == 0){
-                if(totalPlayTime >= 180){
+            if(totalPlayTime%60 == 0){
+                if(totalPlayTime >= 120){
                     difficulty = 6
-                }else if(totalPlayTime == 120){
+                }else if(totalPlayTime == 60){
                     difficulty = 4
                 }
                 gamePlay.style.display = 'none'
@@ -227,10 +227,6 @@ function runAgain() {
     window.location.href = "index.html"; // or restart game logic
 }
 
-function handleArrowClick() {
-      document.querySelector('.footer-arrow').remove();
-      alert("Yes");
-    }
 // Call this on the first button click: <button onclick="playStartMusic()">
 function playStartMusic() {
   document.getElementById('start-music').play().catch(e => console.error(e));

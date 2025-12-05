@@ -11,6 +11,8 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    overflow-y: hidden;
+    user-select: none;
 }
 
 .main-box {
@@ -93,6 +95,10 @@ button:hover {
 }
 /* Sam's code end */
 
+.startScreen, .gameOver, .gamePlay, .memorize{
+    overflow-y: hidden;
+}
+
 small{
     font-size: 1rem;
 }
@@ -103,8 +109,8 @@ small{
     justify-content: center;
     align-items: center;
     background-color: rgb(141, 167, 177);
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
 }
 .gameOver{
     display: none;
