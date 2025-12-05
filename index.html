@@ -86,13 +86,58 @@
 
         <button onclick="runAgain()">RUN IT AGAIN!</button>
       </div>
-
-
     </div>
-</div>
+        
   <!-- Sam's code end -->
+<<<<<<< HEAD
   
   <script src="./script.js"></script>
 
+=======
+    <!-- Include necessary JS logic to manage music playback -->
+    <script>
+        // Define ALL music control functions here to ensure they exist on load
+        function stopAllMusic() {
+            // Check if element exists before trying to pause/reset
+            const startMusic = document.getElementById('start-music');
+            const gameplayMusic = document.getElementById('gameplay-music');
+            const endMusic = document.getElementById('end-music');
+            if (startMusic) { startMusic.pause(); startMusic.currentTime = 0; }
+            if (gameplayMusic) { gameplayMusic.pause(); gameplayMusic.currentTime = 0; }
+            if (endMusic) { endMusic.pause(); endMusic.currentTime = 0; }
+        }
+        // The function linked to your "Start" buttons
+        function playStartMusic() {
+            stopAllMusic();
+            // .play() must be called directly within the user-gesture handler
+            document.getElementById('start-music').play().catch(e => console.error("Start music failed:", e));
+            // This function effectively "unlocks" audio for the entire page now
+        }
+        // Function to transition to gameplay music (call this from script.js)
+        function playGameplayMusic() {
+            stopAllMusic();
+            document.getElementById('gameplay-music').play().catch(e => console.error("Gameplay music failed:", e));
+        }
+        // Function to transition to end screen music (call this from script.js)
+        function playEndMusic() {
+            stopAllMusic();
+            document.getElementById('end-music').play().catch(e => console.error("End music failed:", e));
+        }
+        // Ensure the original functions from HTML still work if had them here
+        function handleArrowClick() {
+            // We call playStartMusic() here too, just in case this is the first click
+            playStartMusic(); 
+            const arrow = document.querySelector('.footer-arrow');
+            if (arrow) arrow.remove();
+            alert("Yes");
+        }
+        function runAgain() {
+            stopAllMusic(); // Stop music before redirecting
+            window.location.href = "index.html"; 
+        }
+    </script>
+    <!-- Main game logic script -->
+  <script src="script.js"></script>
+>>>>>>> 224061e528b1736ee23140bf3123ba3d0dfb2a1d
 </body>
 </html>
