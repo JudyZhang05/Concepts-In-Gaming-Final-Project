@@ -220,9 +220,9 @@ function getScore(){
 
     const message = document.getElementById("result-message");
     if (playerScore >= 80) {
-        message.textContent = "PRESTIGE UNLOCKED: You are... The Grime Buster!";
+        message.textContent = "PRESTIGE UNLOCKED: You are... The Sort Order!";
     } else if (playerScore >= 50) {
-        message.textContent = "Not bad... but there's still gunk.";
+        message.textContent = "Not bad... but there's still grime.";
     } else {
         message.textContent = "WOW! Did you even try?";
     }
