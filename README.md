@@ -5,7 +5,7 @@
 
 ## Live Site Link: https://judyzhang05.github.io/Concepts-In-Gaming-Final-Project
 
-
+QR Code: <img src="hnUIPs.png" alt="QR Code">
 
 ### Collaborators:
 - Judy Zhang
