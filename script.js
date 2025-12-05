@@ -96,7 +96,6 @@ const getItems = () => {
     let imgEl2 = document.createElement('img')
     let imgP2 = document.createElement('p')
     imgEl2.src = `./assets/${allMessyObjects[newList[`${placeKeys[rando]}`]]}.svg`
-    // console.log(allMessyObjects[newList[`${placeKeys[rando]}`]])
     if(newList[`${placeKeys[rando]}`] == 'Pencil'){
         imgEl2.style.width = '40px'
         imgEl2.style.transform = 'Rotate(68deg)'
