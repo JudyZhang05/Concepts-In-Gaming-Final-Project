@@ -25,7 +25,7 @@ const showMinus = document.querySelector('.showMinus')
 const startScreen = document.querySelector('.startScreen')
 
 // declaring dictionary objects
-const allMessyObjects = {'Pencil':'CMD_Pencil', 'Ribbon':'CMD_Ribbon','Trash':'test','Sticker':'CMD_Sticker','photo':'test', 'Paper-Clip':'CMD_PaperClip', 'Paper-Stack': 'CMD_PaperStack'}
+const allMessyObjects = {'Pencil':'CMD_Pencil', 'Ribbon':'CMD_Ribbon', 'Sticker':'CMD_Sticker', 'Paper-Clip':'CMD_PaperClip', 'Paper-Stack': 'CMD_PaperStack', 'Trash':'test', 'Brush':'test'}
 const allMessyKeys = Object.keys(allMessyObjects)
 const allPlaces = {'drawer':'test','Trash-Can':'CMD_Trashcan','bag':'test','book':'test','binder':'test', 'cup':'test'}
 const allPlacesKeys = Object.keys(allPlaces)
@@ -95,8 +95,14 @@ const getItems = () => {
     let placeDiv2 = document.createElement('div')
     let imgEl2 = document.createElement('img')
     let imgP2 = document.createElement('p')
-    imgEl2.src = `./assets/${allPlaces[`${placeKeys[rando]}`]}.svg`
-    imgEl2.style.width = '100px'
+    imgEl2.src = `./assets/${allMessyObjects[newList[`${placeKeys[rando]}`]]}.svg`
+    // console.log(allMessyObjects[newList[`${placeKeys[rando]}`]])
+    if(newList[`${placeKeys[rando]}`] == 'Pencil'){
+        imgEl2.style.width = '40px'
+        imgEl2.style.transform = 'Rotate(68deg)'
+    }else{
+        imgEl2.style.width = '80px'
+    }
     imgP2.textContent = newList[`${placeKeys[rando]}`]
 
     placeDiv2.appendChild(imgEl2)

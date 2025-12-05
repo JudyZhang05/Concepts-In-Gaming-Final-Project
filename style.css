@@ -163,7 +163,7 @@ h3{
 .orderContainer{
     background-color: rgb(219, 219, 190);
     padding: 10% 5%;
-    margin-top: 20%;
+    margin-top: 30%;
     margin-bottom: 50%;
 }
 .readyButton{
@@ -180,6 +180,11 @@ h3{
     justify-content: space-between;
     align-items: center;
     font-family: 'DynaPuff';
+}
+.gameObject{
+    height: 20%;
+    display: flex;
+    align-items: center;
 }
 .gameOption{
     margin-top: 10%;    
