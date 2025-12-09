@@ -238,7 +238,7 @@ function playStartMusic() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    const button = document.getElementById('button-group');
+    const button = document.getElementById('start');
     const audio = document.getElementById('buttonClickSound');
 
     button.addEventListener('click', () => {
