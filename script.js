@@ -236,3 +236,16 @@ function runAgain() {
 function playStartMusic() {
   document.getElementById('start-music').play().catch(e => console.error(e));
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    const button = document.getElementById('button-group');
+    const audio = document.getElementById('buttonClickSound');
+
+    button.addEventListener('click', () => {
+        // Reset the audio to the beginning before playing to allow multiple plays
+        audio.currentTime = 0; 
+        audio.play().catch(error => {
+            console.error("Audio play failed:", error);
+        });
+    });
+});
