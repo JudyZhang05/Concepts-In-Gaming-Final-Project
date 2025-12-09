@@ -221,7 +221,7 @@ function getScore(){
     if (playerScore >= 80) {
         message.textContent = "PRESTIGE UNLOCKED: You are... The Sort Order!";
     } else if (playerScore >= 50) {
-        message.textContent = "Not bad... but there's still grime.";
+        message.textContent = "Not bad... but still at bit messy.";
     } else {
         message.textContent = "WOW! Did you even try?";
     }
