@@ -135,6 +135,7 @@ small{
     width: 100%;
     justify-content: space-evenly;
     align-items: center;
+    color: white;
 }
 
 #memTimer, #playTimer{
@@ -180,11 +181,17 @@ h3{
     justify-content: space-between;
     align-items: center;
     font-family: 'DynaPuff';
+    background-image: url('./assets/CMD\ Background.png');
+    background-repeat: repeat-y;
+    background-size: contain;
+    background-position: top;
+    background-color: #1E2D33;
 }
 .gameObject{
     height: 20%;
     display: flex;
     align-items: center;
+    color: white;
 }
 .gameOption{
     margin-top: 10%;    

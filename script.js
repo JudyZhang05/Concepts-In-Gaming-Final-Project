@@ -25,9 +25,9 @@ const showMinus = document.querySelector('.showMinus')
 const startScreen = document.querySelector('.startScreen')
 
 // declaring dictionary objects
-const allMessyObjects = {'Pencil':'CMD_Pencil', 'Ribbon':'CMD_Ribbon', 'Sticker':'CMD_Sticker', 'Paper-Clip':'CMD_PaperClip', 'Paper-Stack': 'CMD_PaperStack', 'Trash':'test', 'Brush':'test'}
+const allMessyObjects = {'Pencil':'CMD_Pencil', 'Ribbon':'CMD_Ribbon', 'Sticker':'CMD_Sticker', 'Paper-Clip':'CMD_PaperClip', 'Paper-Stack': 'CMD_PaperStack', 'Asthma-Pump':'CMD_Asthma_Pump', 'Frame':'CMD_Frame', 'Marker':'CMD_Marker', 'Sissor':'CMD_Sissors'}
 const allMessyKeys = Object.keys(allMessyObjects)
-const allPlaces = {'drawer':'test','Trash-Can':'CMD_Trashcan','bag':'test','book':'test','binder':'test', 'cup':'test'}
+const allPlaces = {'Bookbag':'CMD_Bookbag','Cup':'CMD_CUP_New','Folder':'CMD_Folder','Trash-Can':'CMD_Trashcan', 'Notebook':'CMD_Notebook'}
 const allPlacesKeys = Object.keys(allPlaces)
 
 // generate new list
@@ -36,8 +36,8 @@ let newGame = () => {
     playTimer.style.display = 'block'
     organizeList.textContent = ''
     for (let match = 0; match < difficulty; match++){
-        let thisPlace = allPlacesKeys[Math.floor(Math.random() * 6)]
-        let thisObject = allMessyKeys[Math.floor(Math.random() * 6)]
+        let thisPlace = allPlacesKeys[Math.floor(Math.random() * 5)]
+        let thisObject = allMessyKeys[Math.floor(Math.random() * 9)]
         // ensure that there is no duplicated objects and places
         if(`${thisPlace}` in newList || Object.values(newList).includes(thisObject)){
             difficulty++
@@ -93,18 +93,20 @@ const getItems = () => {
 
     // objects images    
     let placeDiv2 = document.createElement('div')
-    let imgEl2 = document.createElement('img')
+    let imgDiv = document.createElement('div')
     let imgP2 = document.createElement('p')
-    imgEl2.src = `./assets/${allMessyObjects[newList[`${placeKeys[rando]}`]]}.svg`
-    if(newList[`${placeKeys[rando]}`] == 'Pencil'){
-        imgEl2.style.width = '40px'
-        imgEl2.style.transform = 'Rotate(68deg)'
-    }else{
-        imgEl2.style.width = '80px'
-    }
+
+    placeDiv2.style.width = '100%'
+    placeDiv2.style.height = '100%'
+    imgDiv.style.width = '100%'
+    imgDiv.style.height = '100%'
+    imgDiv.style.background = `url(./assets/${allMessyObjects[newList[`${placeKeys[rando]}`]]}.svg)`
+    imgDiv.style.backgroundRepeat = 'no-repeat'
+    imgDiv.style.backgroundSize = 'contain'
+    imgDiv.style.backgroundPosition = 'center'
     imgP2.textContent = newList[`${placeKeys[rando]}`]
 
-    placeDiv2.appendChild(imgEl2)
+    placeDiv2.appendChild(imgDiv)
     placeDiv2.appendChild(imgP2)
     gameObject.appendChild(placeDiv2)
 }
