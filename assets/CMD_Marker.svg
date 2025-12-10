@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 23.38 150">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#linear-gradient-3);
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5, .cls-6 {
+        stroke-miterlimit: 10;
+      }
+
+      .cls-1, .cls-3, .cls-4, .cls-6 {
+        stroke: #231f20;
+      }
+
+      .cls-2 {
+        filter: url(#outer-glow-1);
+        stroke: #fff;
+      }
+
+      .cls-2, .cls-3, .cls-5 {
+        fill: none;
+      }
+
+      .cls-2, .cls-5 {
+        stroke-width: 2px;
+      }
+
+      .cls-4 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-5 {
+        filter: url(#outer-glow-2);
+        stroke: #f1f2f2;
+      }
+
+      .cls-6 {
+        fill: url(#linear-gradient-2);
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="4.5" y1="75.29" x2="22.88" y2="75.29" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f1f2f2"/>
+      <stop offset="1" stop-color="#d1d3d4"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="4.5" y1="8.6" x2="22.88" y2="8.6" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff200"/>
+      <stop offset="1" stop-color="#fbb040"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-3" x1="4.5" y1="141.6" x2="22.88" y2="141.6" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff200"/>
+      <stop offset="1" stop-color="#f7941d"/>
+    </linearGradient>
+    <filter id="outer-glow-1" x=".24" y="0" width="14.64" height="17.52" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="0"/>
+      <feGaussianBlur result="blur" stdDeviation="2"/>
+      <feFlood flood-color="#fff" flood-opacity=".82"/>
+      <feComposite in2="blur" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="outer-glow-2" x="0" y="133.44" width="14.64" height="16.56" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="0"/>
+      <feGaussianBlur result="blur-2" stdDeviation="2"/>
+      <feFlood flood-color="#fff" flood-opacity=".82"/>
+      <feComposite in2="blur-2" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Layer_2-2" data-name="Layer 2">
+    <g>
+      <rect class="cls-4" x="4.5" y="13.15" width="18.38" height="124.27"/>
+      <path class="cls-6" d="M8.88,4.04h9.1c2.71,0,4.9,2.2,4.9,4.9v4.21H4.5v-4.73c0-2.42,1.96-4.38,4.38-4.38Z"/>
+      <path class="cls-1" d="M4.5,137.43h18.38v.82c0,4.15-3.37,7.52-7.52,7.52h-6.58c-2.37,0-4.29-1.92-4.29-4.29v-4.05h0Z"/>
+      <line class="cls-3" x1="4.5" y1="44.89" x2="22.88" y2="44.89"/>
+      <line class="cls-3" x1="4.5" y1="107.91" x2="22.88" y2="107.91"/>
+      <path class="cls-2" d="M7.89,6.55c-.56,1.5-.7,3.15-.39,4.72"/>
+      <path class="cls-5" d="M7.01,139.52c.05,1.4.27,2.8.66,4.15"/>
+    </g>
+  </g>
+</svg>

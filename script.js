@@ -221,7 +221,7 @@ function getScore(){
     if (playerScore >= 80) {
         message.textContent = "PRESTIGE UNLOCKED: You are... The Sort Order!";
     } else if (playerScore >= 50) {
-        message.textContent = "Not bad... but there's still grime.";
+        message.textContent = "Not bad... but still at bit messy.";
     } else {
         message.textContent = "WOW! Did you even try?";
     }
@@ -236,3 +236,16 @@ function runAgain() {
 function playStartMusic() {
   document.getElementById('start-music').play().catch(e => console.error(e));
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    const button = document.getElementById('start');
+    const audio = document.getElementById('buttonClickSound');
+
+    button.addEventListener('click', () => {
+        // Reset the audio to the beginning before playing to allow multiple plays
+        audio.currentTime = 0; 
+        audio.play().catch(error => {
+            console.error("Audio play failed:", error);
+        });
+    });
+});
