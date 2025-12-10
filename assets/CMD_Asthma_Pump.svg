@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 74.25 137.43">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#New_Gradient_Swatch_2);
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5, .cls-6, .cls-7 {
+        stroke: #231f20;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-3 {
+        fill: #e6e7e8;
+      }
+
+      .cls-4 {
+        fill: url(#New_Gradient_Swatch_3);
+      }
+
+      .cls-5 {
+        fill: #f1f2f2;
+      }
+
+      .cls-6 {
+        fill: url(#New_Gradient_Swatch_3-2);
+      }
+
+      .cls-7 {
+        fill: #bcbec0;
+      }
+    </style>
+    <linearGradient id="New_Gradient_Swatch_2" data-name="New Gradient Swatch 2" x1="-22.49" y1="30.75" x2="69.18" y2="30.75" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#231f20"/>
+      <stop offset=".15" stop-color="#fff"/>
+      <stop offset=".3" stop-color="#939598"/>
+      <stop offset=".48" stop-color="#fff"/>
+      <stop offset=".65" stop-color="#808285"/>
+      <stop offset=".84" stop-color="#fff"/>
+      <stop offset="1" stop-color="#231f20"/>
+    </linearGradient>
+    <linearGradient id="New_Gradient_Swatch_3" data-name="New Gradient Swatch 3" x1=".5" y1="82.56" x2="25.04" y2="82.56" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#cae9e4"/>
+      <stop offset="1" stop-color="#89b5b3"/>
+    </linearGradient>
+    <linearGradient id="New_Gradient_Swatch_3-2" data-name="New Gradient Swatch 3" x1="25.04" x2="52.39" xlink:href="#New_Gradient_Swatch_3"/>
+  </defs>
+  <g id="Layer_3" data-name="Layer 3">
+    <g id="Asthma_Pump" data-name="Asthma Pump">
+      <path class="cls-1" d="M10.31.5h27.8c3.92,0,7.1,3.18,7.1,7.1v53.41H3.21V7.6C3.21,3.68,6.39.5,10.31.5Z"/>
+      <path class="cls-5" d="M18.75,12.52h26.45v37.44H11.91v-30.6c0-3.77,3.06-6.84,6.84-6.84Z"/>
+      <polygon class="cls-4" points="25.04 136.85 .5 134.78 .5 46.1 25.04 28.27 25.04 136.85"/>
+      <polygon class="cls-6" points="52.39 132.7 25.04 136.85 25.04 28.27 52.39 28.27 52.39 132.7"/>
+      <path class="cls-2" d="M73.73,136.85H25.24v-23.21c-.21-5.44,6.93-5.23,14.72-5.23h12.43c2.13,1.22,17.16,4.66,20.58,9.17l.76,19.27Z"/>
+      <polygon class="cls-7" points="39.57 136.85 25.24 136.85 25.67 111.66 39.28 116.13 39.57 136.85"/>
+      <path class="cls-3" d="M73.73,136.85h-34.45v-19.16c0-1.69.75-2.39,2.44-2.39l26.73-.16c3.22,0,5.28,2.1,5.28,5.31v16.39Z"/>
+    </g>
+  </g>
+</svg>
