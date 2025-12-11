@@ -27,7 +27,7 @@ const startScreen = document.querySelector('.startScreen')
 // declaring dictionary objects
 const allMessyObjects = {'Pencil':'CMD_Pencil', 'Ribbon':'CMD_Ribbon', 'Sticker':'CMD_Sticker', 'Paper-Clip':'CMD_PaperClip', 'Paper-Stack': 'CMD_PaperStack', 'Asthma-Pump':'CMD_Asthma_Pump', 'Frame':'CMD_Frame', 'Marker':'CMD_Marker', 'Sissor':'CMD_Sissors'}
 const allMessyKeys = Object.keys(allMessyObjects)
-const allPlaces = {'Bookbag':'CMD_Bookbag','Cup':'CMD_CUP_New','Folder':'CMD_Folder','Trash-Can':'CMD_Trashcan', 'Notebook':'CMD_Notebook'}
+const allPlaces = {'Bookbag':'CMD_Bookbag','Cup':'CMD_Cup_New','Folder':'CMD_Folder','Trash-Can':'CMD_Trashcan', 'Notebook':'CMD_Notebook', 'Box':'CMD_Box'}
 const allPlacesKeys = Object.keys(allPlaces)
 
 // generate new list
@@ -36,7 +36,7 @@ let newGame = () => {
     playTimer.style.display = 'block'
     organizeList.textContent = ''
     for (let match = 0; match < difficulty; match++){
-        let thisPlace = allPlacesKeys[Math.floor(Math.random() * 5)]
+        let thisPlace = allPlacesKeys[Math.floor(Math.random() * 6)]
         let thisObject = allMessyKeys[Math.floor(Math.random() * 9)]
         // ensure that there is no duplicated objects and places
         if(`${thisPlace}` in newList || Object.values(newList).includes(thisObject)){
