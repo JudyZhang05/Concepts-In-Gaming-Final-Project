@@ -25,7 +25,7 @@ const showMinus = document.querySelector('.showMinus')
 const startScreen = document.querySelector('.startScreen')
 
 // declaring dictionary objects
-const allMessyObjects = {'Pencil':'CMD_Pencil', 'Ribbon':'CMD_Ribbon', 'Sticker':'CMD_Sticker', 'Paper-Clip':'CMD_PaperClip', 'Paper-Stack': 'CMD_PaperStack', 'Asthma-Pump':'CMD_Asthma_Pump', 'Frame':'CMD_Frame', 'Marker':'CMD_Marker', 'Sissor':'CMD_Sissors'}
+const allMessyObjects = {'Pencil':'CMD_Pencil', 'Ribbon':'CMD_Ribbon', 'Sticker':'CMD_Sticker', 'Paper-Clip':'CMD_PaperClip', 'Paper-Stack': 'CMD_PaperStack', 'Asthma-Pump':'CMD_Asthma_Pump', 'Frame':'CMD_Frame', 'Marker':'CMD_Marker', 'Sissor':'CMD_Scissors'}
 const allMessyKeys = Object.keys(allMessyObjects)
 const allPlaces = {'Bookbag':'CMD_Bookbag','Cup':'CMD_Cup_New','Folder':'CMD_Folder','Trash-Can':'CMD_Trashcan', 'Notebook':'CMD_Notebook', 'Box':'CMD_Box'}
 const allPlacesKeys = Object.keys(allPlaces)
