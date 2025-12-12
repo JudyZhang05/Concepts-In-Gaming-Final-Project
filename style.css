@@ -174,7 +174,7 @@ h3{
 
 .gamePlay{
     display: none;
-    height: 100%;
+    height: 100vh;
     width: 100%;
     text-align: center;
     flex-direction: column;
