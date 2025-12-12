@@ -20,6 +20,3 @@ It’s a clear day in Utopia City!  So it’s the perfect time to clean our desk
 ## Documentation:
 1. Project Assignment: https://conceptsingamingfall2025.wordpress.com/wp-content/uploads/2025/11/finalproject_f25.pdf
 2. Figma Link: https://www.figma.com/design/BV44KBoDwVIZZKey7DrN5Q/Concepts-In-Gaming?node-id=4-2&p=f&t=iLArhuhBOUIayOFT-0
-
-## External Resources:
-- TBD
